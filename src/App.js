@@ -1,6 +1,5 @@
 import "./App.css";
 
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -9,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FeatureCard from "./FeatureCard";
 import { COLORS, OPTION } from "./colors";
+import { lightenColor } from "./FeatureCard";
 
 let textColor = COLORS[OPTION].text;
 let backgroundColor = COLORS[OPTION].back;
@@ -21,13 +21,14 @@ let boxHeight = "180px";
 function App() {
   return (
     <>
-      <div style={{ height: "100%" }}>
+      <div style={{ height: "100%",
+              fontFamily: "Arial" }}>
         <Navbar sticky="top" style={{ backgroundColor: primaryColor }}>
           <Stack direction="horizontal" gap={3} className="w-100">
             <div className="flex-grow-1"  style={{ marginLeft: "8px" }}>
               {" "}
               <img
-                src="/img/logo.svg"
+                src="/img/logo-light.svg"
                 width="200"
                 height="50"
                 className="d-inline-block align-top"
@@ -48,6 +49,7 @@ function App() {
                   backgroundColor: secondaryColor,
                   borderColor: secondaryColor,
                   marginRight: "8px",
+                  color: textColor
                 }}
               >
                 Sign up
@@ -59,6 +61,7 @@ function App() {
                   backgroundColor: accentColor,
                   borderColor: accentColor,
                   marginRight: "8px",
+                  color: textColor
                 }}
               >
                 Login
@@ -79,10 +82,11 @@ function App() {
               padding: "32px",
               backgroundColor: backgroundColor,
               flex: 1,
+              color: textColor
             }}
           >
-            <h1>Welcome to IntelliAssist</h1>
-            <h2>Your 24/7 Virtual Customer Support Partner</h2>
+            <h1 style={{fontWeight:"bold", fontSize: "64px"}}>Welcome to IntelliAssist</h1>
+            <h2 style={{fontWeight:"bold", fontSize: "36px", color: lightenColor(textColor, 0.4)}}>Your 24/7 Virtual Customer Support Partner</h2>
 
             <Stack direction="horizontal" gap={3}>
               <div style={{ padding: "8px", width: "50%" }}>
@@ -109,6 +113,7 @@ function App() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    fontWeight: "bold"
                   }}
                 >
                   Why Choose IntelliAssist?
@@ -170,7 +175,7 @@ function App() {
           }}
         >
           <Stack gap={3}>
-            <div style={{ textAlign: "center", height: "110px" }}>
+            <div style={{ textAlign: "center", height: "90px",  }}>
               <Container fluid>
                 <Button
                   variant="primary"

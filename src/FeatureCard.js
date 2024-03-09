@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
 import { COLORS, OPTION } from "./colors";
 
 let textColor = COLORS[OPTION].text;
@@ -27,13 +26,14 @@ function FeatureCard({ title, description, boxHeight }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            fontWeight: "bold"
           }}
         >
           {title}
         </h4>
         <div  style={{
-          height: "2px",
-          backgroundColor: accentColor,
+          height: "1px",
+          backgroundColor: primaryColor,
           borderRadius: "8px",
           margin: "8px",
         }}></div>
@@ -68,7 +68,7 @@ function hexToRgb(hex) {
     return [r, g, b];
 }
 
-function lightenColor(hex, percent) {
+export function lightenColor(hex, percent) {
     const [r, g, b] = hexToRgb(hex);
     const newR = Math.round(r + (255 - r) * percent);
     const newG = Math.round(g + (255 - g) * percent);
