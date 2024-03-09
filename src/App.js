@@ -49,16 +49,26 @@ function App() {
               {" "}
               {isLoggedIn ? (
                 <>
-                  <h3
+                  <div
                     style={{
-                      fontWeight: "bold",
-                      fontSize: "24px",
-                      color: "#fafafa",
-                      marginRight: "8px",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      justifyContent: "center",
+                      height: "100%",
                     }}
                   >
-                    Hey Human!
-                  </h3>
+                    <h3
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "20px",
+                        color: "#fafafa",
+                        paddingTop: "8px",
+                        marginRight: "24px",
+                      }}
+                    >
+                      Hey Human!
+                    </h3>
+                  </div>
                   <Button
                     onClick={toggleLogin}
                     variant="danger"
