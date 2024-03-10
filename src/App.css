@@ -84,3 +84,13 @@
   color: white;
   cursor: pointer;
 }
+
+#customButton.custom-button {
+  background-color: var(--button-color); 
+  border-color: var(--button-color); 
+}
+
+#customButton.custom-button:hover {
+  background-color: var(--hover-color); 
+  border-color: var(--hover-color); 
+}

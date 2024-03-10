@@ -240,38 +240,43 @@ function App() {
                 <Container fluid>
                   <Button
                     onClick={handleShowChatWindow}
+                    id="customButton"
+                    className="custom-button"
                     variant="primary"
                     style={{
                       width: "25%",
                       height: "100px",
-                      textSizeAdjust: "50px",
-                      backgroundColor: primaryColor,
-                      borderColor: primaryColor,
                       fontSize: "36px",
+                      "--button-color": primaryColor,
+                      "--hover-color": lightenColor(primaryColor, 0.15),
                     }}
                   >
                     Chat
                   </Button>{" "}
                   <Button
+                    id="customButton"
+                    className="custom-button"
                     variant="primary"
                     style={{
                       width: "25%",
                       height: "100px",
-                      backgroundColor: primaryColor,
-                      borderColor: primaryColor,
                       fontSize: "36px",
+                      "--button-color": primaryColor,
+                      "--hover-color": lightenColor(primaryColor, 0.15),
                     }}
                   >
                     Voice
                   </Button>{" "}
                   <Button
+                    id="customButton"
+                    className="custom-button"
                     variant="primary"
                     style={{
                       width: "25%",
                       height: "100px",
-                      backgroundColor: primaryColor,
-                      borderColor: primaryColor,
                       fontSize: "36px",
+                      "--button-color": primaryColor,
+                      "--hover-color": lightenColor(primaryColor, 0.15),
                     }}
                   >
                     Video
