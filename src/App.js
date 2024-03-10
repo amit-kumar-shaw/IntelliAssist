@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Modal from 'react-bootstrap/Modal';
 import FeatureCard from "./FeatureCard";
 import { COLORS, OPTION } from "./colors";
 import { lightenColor } from "./FeatureCard";
@@ -20,6 +21,11 @@ let boxHeight = "180px";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
+
+  const [showChatWindow, setShowChatWindow] = useState(false);
+
+  const handleCloseChatWindow = () => setShowChatWindow(false);
+  const handleShowChatWindow = () => setShowChatWindow(true);
 
   const toggleLogin = () => {
     setisLoggedIn(!isLoggedIn);
@@ -232,6 +238,7 @@ function App() {
               <div style={{ textAlign: "center", height: "90px" }}>
                 <Container fluid>
                   <Button
+                  onClick={handleShowChatWindow}
                     variant="primary"
                     style={{
                       width: "25%",
@@ -277,6 +284,23 @@ function App() {
           </Stack>
         </Navbar>
       </div>
+
+      <Modal
+        size="lg"
+        show={showChatWindow}
+        onHide={handleCloseChatWindow}
+        aria-labelledby="example-modal-sizes-title-lg"
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            IntelliAssist Chat
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Under development</Modal.Body>
+      </Modal>
     </>
   );
 }
