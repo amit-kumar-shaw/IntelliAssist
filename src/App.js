@@ -6,10 +6,11 @@ import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 import FeatureCard from "./FeatureCard";
 import { COLORS, OPTION } from "./colors";
 import { lightenColor } from "./FeatureCard";
+import ChatWindow from "./ChatWindow";
 
 let textColor = COLORS[OPTION].text;
 let backgroundColor = COLORS[OPTION].back;
@@ -238,7 +239,7 @@ function App() {
               <div style={{ textAlign: "center", height: "90px" }}>
                 <Container fluid>
                   <Button
-                  onClick={handleShowChatWindow}
+                    onClick={handleShowChatWindow}
                     variant="primary"
                     style={{
                       width: "25%",
@@ -299,7 +300,9 @@ function App() {
             IntelliAssist Chat
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Under development</Modal.Body>
+        <Modal.Body>
+          <ChatWindow></ChatWindow>
+        </Modal.Body>
       </Modal>
     </>
   );
